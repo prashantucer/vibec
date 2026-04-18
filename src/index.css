@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --color-apple-bg: #FBFBFD;
+  --color-apple-surface: #FFFFFF;
+  --color-apple-text: #1D1D1F;
+  --color-apple-text-muted: #86868B;
+  --color-apple-blue: #0071E3;
+  --color-apple-blue-hover: #0077ED;
+  --color-apple-border: #D2D2D7;
+}
+
+@layer base {
+  body {
+    @apply bg-apple-bg text-apple-text font-sans antialiased m-0 p-0 selection:bg-apple-blue/20 selection:text-apple-blue;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* Custom utilities for smooth shadows and blurs */
+@layer utilities {
+  .apple-shadow {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+  .apple-shadow-hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+  }
+  .apple-glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+  }
+}
